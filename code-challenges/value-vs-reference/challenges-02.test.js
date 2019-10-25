@@ -9,9 +9,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  let newStr = str;
-  newStr = `${newStr} The end.`;
-  return newStr;
+  return `${str} The end.`;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,9 +62,7 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
-  people.forEach(value => {
-    value.isAuthor = true;
-  })
+  people.forEach(value => value.isAuthor = true)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,9 +81,7 @@ console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
 const append = (arr1, arr2) => {
-  arr2.forEach(value => {
-    arr1.push(value);
-  })
+  arr2.forEach(value => arr1.push(value))
 };
 
 /* ------------------------------------------------------------------------------------------------
