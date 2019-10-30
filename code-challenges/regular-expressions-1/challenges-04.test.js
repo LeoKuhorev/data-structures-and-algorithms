@@ -23,8 +23,8 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  const regex = /[A-Z]\w+/gm;
-  return str.match(regex) ? str.match(regex) : [];
+  const regex = /\b[A-Z]\w+\b/gm;
+  return str.match(regex) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------

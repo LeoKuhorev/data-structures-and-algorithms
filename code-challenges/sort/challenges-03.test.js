@@ -176,8 +176,8 @@ const sortSchedule = (arr) => {
       if (a.start !== b.start) {
         return a.start > b.start;
       } else {
-        let x = a.end - a.start;
-        let y = b.end - b.start;
+        x = a.end - a.start;
+        y = b.end - b.start;
         return x > y;
       }
     }
