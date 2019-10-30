@@ -12,10 +12,7 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
-const isNum = (input) => {
-  const regex = /\d/gm;
-  return regex.test(input);
-};
+const isNum = (input) => /\d/.test(input);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -26,8 +23,8 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  const regex = /[A-Z]\w+/gm;
-  return str.match(regex) ? str.match(regex) : [];
+  const regex = /\b[A-Z]\w+\b/gm;
+  return str.match(regex) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,7 +102,7 @@ Hint: All of these words end with the letters "ells".
 const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
 
 const findShells = (str) => {
-  const regex = /\b(\w*ells)\b/gm;
+  const regex = /\b(sea)?s?h?(ells)\b/gmi;
   return str.match(regex);
 };
 
