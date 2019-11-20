@@ -11,11 +11,7 @@ Note: You might need to use the same method more than once.
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
-const count = (target, input) => {
-  return input.reduce( (sum, arr) => {
-    return sum += arr.filter( el => el === target ).length;
-  }, 0)
-};
+const count = (target, input) => input.reduce( (sum, arr) => sum += arr.filter( el => el === target ).length, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -27,11 +23,7 @@ You may want to use filter, map, or reduce for this problem, but are not require
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
-const totalSum = input => {
-  return input.reduce( (total, arr) => {
-    return total += arr.reduce( (subtotal, val) => subtotal += val, 0)
-  }, 0);
-};
+const totalSum = input => input.reduce( (total, arr) => total + arr.reduce( (subtotal, val) => subtotal + val, 0), 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -131,8 +123,10 @@ let findShortest = (data) => {
       name = person.name;
     }
     return name;
-  },'')
+  },'');
 };
+
+// let findShortest = (data) => data.reduce( (shorte))
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
