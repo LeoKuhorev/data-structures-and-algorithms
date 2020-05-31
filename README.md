@@ -2,4 +2,4 @@
 
 ## Table of contents:
 
-<a href="#">Array-reverse</a>
+[Array Reverse](./challenges/array_reverse)

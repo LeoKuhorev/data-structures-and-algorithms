@@ -12,4 +12,4 @@ This method is O(n) space and complexity
 ## Solution
 
 <img src="https://github.com/LeoKuhorev/data-structures-and-algorithms/blob/array-reverse/assets/reverse_array_1.jpg" alt="Whiteboard Solution" style="max-width:100%;">
-<img src="https://github.com/LeoKuhorev/data-structures-and-algorithms/blob/array-reverse/assets/reverse_array_1.jpg" alt="Whiteboard Solution" style="max-width:100%;">
+<img src="https://github.com/LeoKuhorev/data-structures-and-algorithms/blob/array-reverse/assets/reverse_array_2.jpg" alt="Whiteboard Solution" style="max-width:100%;">
