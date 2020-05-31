@@ -1,11 +1,15 @@
 # Reverse an Array
-<!-- Short summary or background information -->
 
 ## Challenge
-<!-- Description of the challenge -->
+
+Write a function which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+I've decided to approach this problem creating an empty list, popping the last element of a given array and appending it to the new one. It seems to be relatively memory efficient as we don't have to create a new DS in memory for each new elenemt.
+This method is O(n) space and complexity
 
 ## Solution
-<!-- Embedded whiteboard image -->
+
+<img src="assets/reverse_array_1.jpg">
+<img src="assets/reverse_array_2.jpg">
