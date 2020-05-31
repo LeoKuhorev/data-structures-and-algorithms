@@ -2,4 +2,5 @@
 
 ## Table of contents:
 
-[Array Reverse](./challenges/array_reverse)
+[Array Reverse](./challenges/array_reverse)  
+[Array Shift](./challenges/array_shift)
