@@ -230,3 +230,10 @@ $RECYCLE.BIN/
 
 # Pytest
 .pytest*
+
+*pycache*
+*.pyc
+
+# VSCode
+.vscode
+
