@@ -11,3 +11,9 @@ def reverse_array(lst):
     for _ in range(len(lst)):
         output.append(lst.pop())
     return output
+
+
+def reverse_array_in_place(lst):
+    for i in range(len(lst) // 2):
+        lst[i], lst[-i - 1] = lst[-i - 1], lst[i]
+    return lst
