@@ -2,6 +2,12 @@
 
 ## Table of contents:
 
+### Algorithms
+
 [Array Reverse](./challenges/array_reverse)  
 [Array Shift](./challenges/array_shift)  
 [Binary Search](./challenges/array_binary_search)
+
+### Data Structures
+
+[Linked List](./Data-Structures/linked_list)
