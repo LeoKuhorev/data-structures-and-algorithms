@@ -1,4 +1,5 @@
 from .linked_list import LinkedList, Node
+import pytest
 
 
 class TestNode:
@@ -75,3 +76,64 @@ class TestLinkedList:
         self.ll2.insert(4)
         self.ll2.insert(5)
         assert str(self.ll2) == '{5} -> {4} -> {3} -> {2} -> {1} -> None'
+
+
+class TestLLInsertion:
+    @pytest.fixture
+    def empty_ll(self):
+        ll = LinkedList()
+        return ll
+
+    @pytest.fixture()
+    def ll(self):
+        ll = LinkedList(1)
+        return ll
+
+    def test_ll_append_edge_case(self, empty_ll):
+        empty_ll.append(1)
+        empty_ll.append(2)
+        assert empty_ll.head.val == 1
+        assert empty_ll.head.next.val == 2
+
+    def test_ll_insert_before_1(self, empty_ll):
+        """Assert it can handle an empty LL"""
+        empty_ll.insert_before(1, 2)
+        assert empty_ll.head is None
+
+    def test_ll_insert_before_2(self, ll):
+        """Assert it can replace the head"""
+        ll.insert_before(1, 0)
+        assert ll.head.val == 0
+        assert ll.head.next.val == 1
+
+    def test_ll_insert_before_3(self, ll):
+        """Assert it works when the value doesn't exist in the list"""
+        ll.insert_before(6, 0)
+        assert ll.head.val == 1
+        assert ll.head.next is None
+
+    def test_ll_insert_after_1(self, empty_ll):
+        """Assert it can handle an empty LL"""
+        empty_ll.insert_after(0, 1)
+        assert empty_ll.head is None
+
+    def test_ll_insert_after_2(self, ll):
+        """Assert it works when the value doesn't exist in the list"""
+        ll.insert_after(6, 1)
+        assert ll.head.val == 1
+
+    def test_ll_insert_after_3(self, ll):
+        """Assert it can handle an empty LL"""
+        ll.insert_after(1, 2)
+        assert ll.head.val == 1
+        assert ll.head.next.val == 2
+
+    def test_ll_insert_after_happy_path(self, ll):
+        """Happy path"""
+        ll.insert_after(1, 2)
+        ll.insert_after(2, 3)
+        ll.insert_after(3, 4)
+        assert ll.head.val == 1
+        assert ll.head.next.val == 2
+        assert ll.head.next.next.val == 3
+        assert ll.head.next.next.next.val == 4

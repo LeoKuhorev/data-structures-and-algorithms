@@ -11,25 +11,34 @@ Create a Node classs and LinkedList class that will have a singly linked list pr
 
 - prepend an element to the beginning of the linked list;
 - check if the given element exists in the list;
-- print all list elements as a string in a given format.
+- print all list elements as a string in a given format;
+- add a new node with the given value to the end of the list;
+- add a new node with the given newValue immediately before the first value node;
+- add a new node with the given newValue immediately after the first value node;
 
 ## Approach & Efficiency
 
 - `insert()` can be described as O(1) time and O(1) space;
 - `includes()` can be described as O(n) time and O(1) space;
-- `__str__()` can be described as O(n) time and O(n) space.
+- `__str__()` can be described as O(n) time and O(n) space;
+- `append()` can be described as O(n) time and O(1) space;
+- `insert_before()` can be described as O(n) time and O(1) space;
+- `insert_after()` can be described as O(n) time and O(1) space.
 
 ## API
 
 - `.insert()` - takes in any value as an argument prepends a new node with that value to the head of the list;
 - `.includes()` - takes in any value as an argument and returns a boolean result depending on whether that value exists in the list;
-- `.__str__()` - takes in no arguments and returns a string representing all the values in the Linked List
+- `.__str__()` - takes in no arguments and returns a string representing all the values in the Linked List;
+- `append()` adds a new node with the given value to the end of the list;
+- `insert_before()` which add a new node with the given newValue immediately before the first value node;
+- `insert_after()` which add a new node with the given newValue immediately after the first value node.
 
 ## Solution
 
 <img src="../../assets/linked_list.png" alt="Whiteboard Solution" style="max-width:100%;">
 
-# Linked List Insertions
+# Implementation: Linked List Insertions
 
 ## Author: _Leo Kukharau_ and _Thomas Sherer_
 
