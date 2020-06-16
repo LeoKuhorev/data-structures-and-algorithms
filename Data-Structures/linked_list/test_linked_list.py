@@ -79,15 +79,13 @@ class TestLinkedList:
 
 
 class TestLLInsertion:
-    @pytest.fixture
+    @pytest.fixture()
     def empty_ll(self):
-        ll = LinkedList()
-        return ll
+        return LinkedList()
 
     @pytest.fixture()
     def ll(self):
-        ll = LinkedList(1)
-        return ll
+        return LinkedList(1)
 
     def test_ll_append_edge_case(self, empty_ll):
         empty_ll.append(1)
@@ -137,3 +135,44 @@ class TestLLInsertion:
         assert ll.head.next.val == 2
         assert ll.head.next.next.val == 3
         assert ll.head.next.next.next.val == 4
+
+
+class TestLLKthValue:
+    @pytest.fixture()
+    def empty_ll(self):
+        return LinkedList()
+
+    @pytest.fixture()
+    def ll(self):
+        return LinkedList(0)
+
+    def test_ll_len_1(self, empty_ll, ll):
+        assert empty_ll.ll_len() == 0
+        assert ll.ll_len() == 1
+
+    def test_ll_kth_exception_1(self, ll):
+        with pytest.raises(Exception) as e:
+            assert ll.kth_from_end_val(2.5)
+        assert str(e.value) == 'k must be an integer'
+
+    def test_ll_kth_exception_2(self, ll):
+        with pytest.raises(Exception) as e:
+            assert ll.kth_from_end_val(-2)
+        assert str(e.value) == 'k must be greater than 0'
+
+    def test_ll_kth_exception_3(self, ll):
+        with pytest.raises(Exception) as e:
+            assert ll.kth_from_end_val(2)
+        assert str(e.value) == 'k must be less than the length of the list'
+
+    def test_ll_kth_exception_happy_path_1(self, ll):
+        assert ll.kth_from_end_val(0) == 0
+
+    def test_ll_kth_exception_happy_path_2(self, ll):
+        ll.insert(1)
+        ll.insert(2)
+        ll.insert(3)
+        assert ll.kth_from_end_val(0) == 0
+        assert ll.kth_from_end_val(1) == 1
+        assert ll.kth_from_end_val(2) == 2
+        assert ll.kth_from_end_val(3) == 3
