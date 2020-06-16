@@ -35,4 +35,10 @@ Create a Node classs and LinkedList class that will have a singly linked list pr
 
 <img src="../../assets/linked_list_insertions.png" alt="Whiteboard Solution" style="max-width:100%;">
 
+# Linked List k-th Value from the end
+
+## Author: _Leo Kukharau_ and _Thomas Sherer_
+
+<img src="../../assets/linked_list_kth_value.png" alt="Whiteboard Solution" style="max-width:100%;">
+
 <a href="./linked_list.py">Link to code</a>
