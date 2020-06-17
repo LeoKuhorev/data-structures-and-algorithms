@@ -120,6 +120,45 @@ class LinkedList:
         else:
             return False
 
+    def ll_len(self) -> int:
+        """Counts the length of the LL
+
+        Returns:
+            int: Number of nodes
+        """
+        count = 0
+        curr = self.head
+        while curr:
+            count += 1
+            curr = curr.next
+        return count
+
+    def kth_from_end_val(self, k: int) -> any:
+        """Returns value of the k-th from the end node
+
+        Args:
+            k (int): node position from the LL tail
+
+        Raises:
+            Exception: k is not int
+            Exception: k is negative
+            Exception: k is greater than LL length
+
+        Returns:
+            any: Node value
+        """
+        if type(k) is not int:
+            raise Exception('k must be an integer')
+        if k < 0:
+            raise Exception('k must be greater than 0')
+        curr = self.head
+        steps = self.ll_len() - k
+        if steps < 1:
+            raise Exception('k must be less than the length of the list')
+        for _ in range(1, steps):
+            curr = curr.next
+        return curr.val
+
     def __str__(self) -> str:
         """LL class String representation
 
@@ -133,3 +172,4 @@ class LinkedList:
             curr = curr.next
         output += 'None'
         return output
+
