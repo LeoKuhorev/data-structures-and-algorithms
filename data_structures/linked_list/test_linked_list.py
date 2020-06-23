@@ -176,3 +176,95 @@ class TestLLKthValue:
         assert ll.kth_from_end_val(1) == 1
         assert ll.kth_from_end_val(2) == 2
         assert ll.kth_from_end_val(3) == 3
+
+    class TestMergeLinkedLists:
+
+        @pytest.fixture()
+        def ll1(self):
+            return LinkedList()
+
+        @pytest.fixture()
+        def ll2(self):
+            return LinkedList()
+
+        def test_both_ll_empty(self, ll1, ll2):
+            assert LinkedList.mergeLists(ll1, ll2) == None
+
+        def test_ll1_empty(self, ll1, ll2):
+            ll2.append(1)
+            ll2.append(2)
+            ll2.append(3)
+            merged_list = LinkedList.mergeLists(ll1, ll2)
+
+            assert merged_list.val == 1
+            assert merged_list.next.val == 2
+            assert merged_list.next.next.val == 3
+
+        def test_ll2_empty(self, ll1, ll2):
+            ll1.append(1)
+            ll1.append(2)
+            ll1.append(3)
+            merged_list = LinkedList.mergeLists(ll1, ll2)
+
+            assert merged_list.val == 1
+            assert merged_list.next.val == 2
+            assert merged_list.next.next.val == 3
+
+        def test_lists_equal_length(self, ll1, ll2):
+            ll1.append(1)
+            ll1.append(2)
+            ll1.append(3)
+            ll2.append(4)
+            ll2.append(5)
+            ll2.append(6)
+
+            merged_list = LinkedList.mergeLists(ll1, ll2)
+
+            assert merged_list.val == 1
+            assert merged_list.next.val == 4
+            assert merged_list.next.next.val == 2
+            assert merged_list.next.next.next.val == 5
+            assert merged_list.next.next.next.next.val == 3
+            assert merged_list.next.next.next.next.next.val == 6
+            merged_list = LinkedList.mergeLists(ll1, ll2)
+
+            assert merged_list.val == 1
+            assert merged_list.next.val == 4
+            assert merged_list.next.next.val == 2
+            assert merged_list.next.next.next.val == 5
+            assert merged_list.next.next.next.next.val == 3
+            assert merged_list.next.next.next.next.next.val == 6
+
+        def test_ll1_longer(self, ll1, ll2):
+            ll1.append(1)
+            ll1.append(2)
+            ll1.append(3)
+            ll1.append(4)
+            ll2.append(5)
+            ll2.append(6)
+
+            merged_list = LinkedList.mergeLists(ll1, ll2)
+
+            assert merged_list.val == 1
+            assert merged_list.next.val == 5
+            assert merged_list.next.next.val == 2
+            assert merged_list.next.next.next.val == 6
+            assert merged_list.next.next.next.next.val == 3
+            assert merged_list.next.next.next.next.next.val == 4
+
+        def test_ll2_longer(self, ll1, ll2):
+            ll1.append(1)
+            ll1.append(2)
+            ll2.append(3)
+            ll2.append(4)
+            ll2.append(5)
+            ll2.append(6)
+
+            merged_list = LinkedList.mergeLists(ll1, ll2)
+
+            assert merged_list.val == 1
+            assert merged_list.next.val == 3
+            assert merged_list.next.next.val == 2
+            assert merged_list.next.next.next.val == 4
+            assert merged_list.next.next.next.next.val == 5
+            assert merged_list.next.next.next.next.next.val == 6

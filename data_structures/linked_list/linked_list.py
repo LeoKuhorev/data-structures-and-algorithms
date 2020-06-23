@@ -173,3 +173,33 @@ class LinkedList:
         output += 'None'
         return output
 
+    @staticmethod
+    def mergeLists(ll1: LinkedList, ll2: LinkedList) -> Node:
+        """Merge two given Linked Lists and return head of the new list
+
+        Args:
+            ll1 (LinkedList): First LL to merge
+            ll2 (LinkedList): Second LL to merge
+
+        Returns:
+            Node: Head of the merged list
+        """
+
+        # Check if any of the given lists is empty
+        if not ll1.head:
+            return ll2.head
+        elif not ll2.head:
+            return ll1.head
+
+        curr1, curr2 = ll1.head, ll2.head
+
+        while curr1:
+            if curr2:
+                tmp1, curr1.next = curr1.next, curr2
+            if tmp1:
+                tmp2, curr2.next = curr2.next, tmp1
+            if not tmp2:
+                break
+            curr1, curr2 = tmp1, tmp2
+
+        return ll1.head

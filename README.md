@@ -10,4 +10,4 @@
 
 ### Data Structures
 
-[Linked List](./Data-Structures/linked_list)
+[Linked List](./data_structures/linked_list)
