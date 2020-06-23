@@ -174,7 +174,7 @@ class LinkedList:
         return output
 
     @staticmethod
-    def mergeLists(ll1: LinkedList, ll2: LinkedList) -> Node:
+    def mergeLists(ll1: object, ll2: object) -> object:
         """Merge two given Linked Lists and return head of the new list
 
         Args:
