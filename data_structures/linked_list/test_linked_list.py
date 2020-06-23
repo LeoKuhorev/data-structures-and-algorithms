@@ -226,14 +226,6 @@ class TestLLKthValue:
             assert merged_list.next.next.next.val == 5
             assert merged_list.next.next.next.next.val == 3
             assert merged_list.next.next.next.next.next.val == 6
-            merged_list = LinkedList.mergeLists(ll1, ll2)
-
-            assert merged_list.val == 1
-            assert merged_list.next.val == 4
-            assert merged_list.next.next.val == 2
-            assert merged_list.next.next.next.val == 5
-            assert merged_list.next.next.next.next.val == 3
-            assert merged_list.next.next.next.next.next.val == 6
 
         def test_ll1_longer(self, ll1, ll2):
             ll1.append(1)
