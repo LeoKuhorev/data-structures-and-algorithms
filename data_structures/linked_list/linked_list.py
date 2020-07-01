@@ -174,32 +174,29 @@ class LinkedList:
         return output
 
     @staticmethod
-    def mergeLists(ll1: object, ll2: object) -> object:
-        """Merge two given Linked Lists and return head of the new list
+    def mergeLists(ll_1: object, ll_2: object) -> object:
+        """Merge two given Linked Lists (in place) and return the head of the new list
 
         Args:
-            ll1 (LinkedList): First LL to merge
-            ll2 (LinkedList): Second LL to merge
+            ll_1 (LinkedList): First LL to merge
+            ll_2 (LinkedList): Second LL to merge
 
         Returns:
             Node: Head of the merged list
         """
 
         # Check if any of the given lists is empty
-        if not ll1.head:
-            return ll2.head
-        elif not ll2.head:
-            return ll1.head
+        if not ll_1.head:
+            return ll_2.head
+        elif not ll_2.head:
+            return ll_1.head
 
-        curr1, curr2 = ll1.head, ll2.head
+        curr_1, curr_2 = ll_1.head, ll_2.head
 
-        while curr1:
-            if curr2:
-                tmp1, curr1.next = curr1.next, curr2
-            if tmp1:
-                tmp2, curr2.next = curr2.next, tmp1
-            if not tmp2:
-                break
-            curr1, curr2 = tmp1, tmp2
+        while curr_1 and curr_2:
+            next_1, curr_1.next = curr_1.next, curr_2
+            if next_1:
+                next_2, curr_2.next = curr_2.next, next_1
+            curr_1, curr_2 = next_1, next_2
 
-        return ll1.head
+        return ll_1.head
