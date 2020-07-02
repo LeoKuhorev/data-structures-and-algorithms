@@ -63,6 +63,14 @@ class Stack:
 
         return ' -> '.join([f'({val})' for val in output])
 
+    def __len__(self):
+        count = 0
+        curr = self.top
+        while curr:
+            count += 1
+            curr = curr.next
+        return count
+
     def push(self, val: any) -> None:
         """Add a new element onto the stack
 
