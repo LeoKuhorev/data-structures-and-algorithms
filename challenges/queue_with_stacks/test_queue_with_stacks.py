@@ -10,8 +10,8 @@ class TestPseudoQueue:
     def queue(self):
         return PseudoQueue()
 
-    def test_instance(self, queue):
-        assert queue
+    def test_instance(self):
+        assert PseudoQueue
 
     def test_enqueue(self, queue):
         """Test if the method returns added value and if the value is added to the queue

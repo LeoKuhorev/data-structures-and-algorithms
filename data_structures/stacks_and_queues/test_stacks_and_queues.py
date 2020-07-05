@@ -17,7 +17,7 @@ class TestStack:
     def test_instantiation_empty(self):
         """Check if the class can successfully create empty instances
         """
-        assert Stack()
+        assert Stack
 
     def test_instantiation_not_empty(self):
         """Check if the class can successfully create non-empty instances
@@ -109,7 +109,7 @@ class TestQueue:
     def test_instantiation_empty(self):
         """Check if the class can successfully create empty instances
         """
-        assert Queue()
+        assert Queue
 
     def test_instantiation_not_empty(self):
         """Check if the class can successfully create non-empty instances
