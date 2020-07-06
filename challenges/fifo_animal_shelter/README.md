@@ -9,7 +9,7 @@ Implement the following methods:
 
 ## Approach & Efficiency
 
-This solution uses two `Stack()` instances to implement standart `Queue()` functionality. Both `enqueue()` and `dequeue()` methods can be described as O(n) time and O(1) space complexity.
+This solution uses two `Stack()` instances to implement standart `Queue()` functionality. Both `enqueue()` and `dequeue()` methods can be described as O(1) time and O(1) space complexity.
 
 ## Solution
 
