@@ -27,6 +27,14 @@ class AnimalShelter:
         self.animal_order = Queue()
 
     def enqueue(self, animal):
+        """Add passed in animal object to the queue
+
+        Args:
+            animal (obj): Expects either Cat() or Dog() instance
+
+        Raises:
+            ValueError: If not Cat() or Dog() is passed in
+        """
         if animal.type == 'Cat':
             self.cats.enqueue(animal)
             self.animal_order.enqueue('Cat')
@@ -37,6 +45,18 @@ class AnimalShelter:
             raise ValueError('Must be either a cat or a dog!')
 
     def dequeue(self, preference=None):
+        """Get the longest waiting in queue Cat() or Dog() depending on passed in preference. If no preference passed in get the longest waiting in queue animal
+
+        Args:
+            preference (str, optional): Animal to be returned (cat or dog). Defaults to None.
+
+        Raises:
+            ValueError: If not a cat or a dog is passed in as a preference
+            AttributeError: When no animals is available
+
+        Returns:
+            obj: Cat() or Dog() instance
+        """
         try:
             if not preference:
                 preference = self.animal_order.dequeue()
