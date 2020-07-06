@@ -152,6 +152,14 @@ class Queue:
 
         return 'Front: ' + ' -> '.join([f'({val})' for val in output]) + ' :Rear'
 
+    def __len__(self):
+        count = 0
+        curr = self.front
+        while curr:
+            count += 1
+            curr = curr.next
+        return count
+
     def enqueue(self, val: any) -> None:
         """Add a new element to the queue
 
