@@ -11,6 +11,7 @@ class TestMultiBracketValidation:
         (')', False),
         ('(', False),
         ('', True),
+        ('[}', False),
         
         # Happy Path
         ('{}', True),
