@@ -10,6 +10,7 @@
 [Linked Lists merge](./challenges/ll_merge)  
 [Queue with Stacks](./challenges/queue_with_stacks)  
 [FIFO Animal Shelter](./challenges/fifo_animal_shelter)
+[Multi Bracket Validation](./challenges/multi_bracket_validation)
 
 # Data Structures
 
