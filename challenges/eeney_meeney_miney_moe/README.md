@@ -9,7 +9,7 @@ Write a function called EeneyMeeneyMineyMoe() that accepts a list of strings and
 ## Approach & Efficiency
 
 This solution uses a circular LinkedList to store indexes of the given list of names. Then we iterate through the LL removing every k-th element before only one index is left.
-This solution can be described as O(n) time and O(1) space
+This solution can be described as O(n \* k) time and O(1) space
 
 ## Solution
 

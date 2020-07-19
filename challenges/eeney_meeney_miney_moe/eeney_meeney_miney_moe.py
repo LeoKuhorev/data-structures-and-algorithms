@@ -47,3 +47,15 @@ def eeney_meeney_miney_moe(names: list, k: int) -> str:
     idx = curr.val
 
     return names[idx]
+
+
+def eeney_meeney_miney_moe_math(names, k):
+    # CREDITS: https://www.reddit.com/r/theydidthemath/comments/3oklvn/request_what_is_the_equation_for_eeny_meeny_miny/
+    L = len(names)
+
+    if L > k:
+        return names[k]
+    elif L > k / 2:
+        return names[2 * L - k]
+    else:
+        return names[(k - L)/(L - 1)]
