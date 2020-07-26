@@ -1,3 +1,6 @@
+from data_structures.stacks_and_queues.stacks_and_queues import Queue
+
+
 class Node:
     def __init__(self, val, left=None, right=None):
         self.val = val
@@ -5,65 +8,107 @@ class Node:
         self.right = right
 
     def __repr__(self):
-        return self.val
+        return f'{self.__class__.__name__}({self.val})'
 
     def __str__(self):
-        return self.val
+        l = self.left.val if self.left else None
+        r = self.right.val if self.right else None
+        return f'left: ({l}) -- ({self.val}) -- ({r}) :right'
 
 
 class BinaryTree:
-    def __init__(self, val):
-        self.root = Node(val)
+    def __init__(self, val=None):
+        self.root = Node(val) if val else None
 
-    def pre_order(self, node=None, output=None):
+    def add(self, val):
+        new_node = Node(val)
+        if not self.root:
+            self.root = new_node
+            return
+
+        q = Queue()
+        q.enqueue(self.root)
+
+        while not q.is_empty():
+            node = q.dequeue()
+            if node.left:
+                q.enqueue(node.left)
+            else:
+                node.left = new_node
+                return
+
+            if node.right:
+                q.enqueue(node.right)
+            else:
+                node.right = new_node
+                return
+
+    def pre_order(self):
         # root >> left >> right
-        if node is None:
-            node = self.root
+        output = []
 
-        if output is None:
-            output = []
+        def traverse(node):
+            if not node:
+                return
+            output.append(node.val)
+            traverse(node.left)
+            traverse(node.right)
 
-        output.append(node.val)
-
-        if node.left:
-            output = self.pre_order(node.left, output)
-        if node.right:
-            output = self.pre_order(node.right, output)
+        traverse(self.root)
 
         return output
 
-    def in_order(self, node=None, output=None):
+    def in_order(self):
         # left >> root >> right
-        if node is None:
-            node = self.root
+        output = []
 
-        if output is None:
-            output = []
+        def traverse(node):
+            if not node:
+                return
 
-        if node.left:
-            output = self.in_order(node.left, output)
+            traverse(node.left)
+            output.append(node.val)
+            traverse(node.right)
 
-        output.append(node.val)
-
-        if node.right:
-            output = self.in_order(node.right, output)
+        traverse(self.root)
 
         return output
 
-    def post_order(self, node=None, output=None):
+    def post_order(self):
         # left >> right >> root
-        if node is None:
-            node = self.root
+        output = []
 
-        if output is None:
-            output = []
+        def traverse(node):
+            if not node:
+                return
 
-        if node.left:
-            output = self.post_order(node.left, output)
+            traverse(node.left)
+            traverse(node.right)
+            output.append(node.val)
 
-        if node.right:
-            output = self.post_order(node.right, output)
-
-        output.append(node.val)
+        traverse(self.root)
 
         return output
+
+
+class BinarySearchTree(BinaryTree):
+
+    def add(self, val):
+        new_node = Node(val)
+
+        def traverse(node):
+            if new_node.val < node.val:
+                if node.left:
+                    traverse(node.left)
+                else:
+                    node.left = new_node
+            else:
+                if node.right:
+                    traverse(node.right)
+                else:
+                    node.right = new_node
+
+        if self.root:
+            traverse(self.root)
+        else:
+            self.root = new_node
