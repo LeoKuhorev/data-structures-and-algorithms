@@ -15,20 +15,29 @@
 
 ## Approach & Efficiency
 
+- class `BinaryTree`:
+
+  - `.add(value)` - O(n) time, O(1) space;
+  - `.contains(value)` - O(n) time, O(1) space;
+  - `.pre_order()` - O(n) time, O(n) space;
+  - `.in_order()` - O(n) time, O(n) space;
+  - `.post_order()` - O(n) time, O(n) space;
+
+- class `BinareSearchTree`:
+  - `.add()` - O(n) time, O(1) space;
+
 ## API
 
 - class `Node` - Class for the Node instances
-- Class `Stack` - which implements Stack data structure with its common methods
+- class `BinaryTree` - which implements Stack data structure with its common methods
 
-  - `.is_empty()` - Method to check if Stack is empty;
-  - `.push(value)` - Method takes any value as an argument and adds a new node with that value to the top of the stack;
-  - `.pop()` - Method that removes the node from the top of the stack, and returns the node’s value;
-  - `.peek()` - Method that returns the value of the node located on top of the stack, without removing it from the stack.
+  - `.add(value)` - Method takes any value as an argument and adds it to the tree (uses breadth-first approach);
+  - `.contains(value)` - Method takes any value as an argument and returns whether or not this value is present in the tree;
+  - `.pre_order()` - Method takes no arguments and returns a list of values of the tree in root >> left >> right order;
+  - `.in_order()` - Method takes no arguments and returns a list of values of the tree in left >> root >> right order;
+  - `.post_order()` - Method takes no arguments and returns a list of values of the tree in left >> right >> root order;
 
-- class `Queue` - which implements Queue data structure with its common methods
-  - `.is_empty()` - method to check if Queue is empty;
-  - `.enqueue(value)` - method that takes any value as an argument and adds a new node with that value to the back of the queue;
-  - `.dequeue()` - Method that removes the node from the front of the queue, and returns the node’s value;
-  - `.peek()` - Method that returns the value of the node located in the front of the queue, without removing it from the queue.
+- class `BinareSearchTree` - which inherits after `BinaryTree` class
+  - `.add()` - Method takes any value as an argument and adds it to the tree (values that are strictly less than the root - got to the left, the rest - to the right);
 
 <a href="./tree.py">Link to code</a>

@@ -37,25 +37,33 @@ class BinaryTree:
             q = Queue()
             q.enqueue(self.root)
 
-            def node_exists(node):
-                if node:
-                    q.enqueue(node)
-                    return True
-                return False
-
             while not q.is_empty():
                 node = q.dequeue()
 
-                if node_exists(node.left):
-                    if not node_exists(node.right):
-                        node.right = new_node
+                if node.left:
+                    q.enqueue(node.left)
                 else:
                     node.left = new_node
+                    return
+
+                if node.right:
+                    q.enqueue(node.right)
+                else:
+                    node.right = new_node
+                    return
 
         else:
             self.root = new_node
 
-    def contains(self, val):
+    def contains(self, val: any) -> bool:
+        """Return whether or not the given value is in the tree
+
+        Args:
+            val (any): Value to look for
+
+        Returns:
+            bool: Whether or not the value is present in the tree
+        """
         def traverse(node):
             if node:
                 if node.val == val:
@@ -66,8 +74,12 @@ class BinaryTree:
 
         return traverse(self.root)
 
-    def pre_order(self):
-        # root >> left >> right
+    def pre_order(self) -> list:
+        """Traverse the list in pre-order manner: root >> left >> right
+
+        Returns:
+            list: List of values
+        """
         output = []
 
         def traverse(node):
@@ -80,8 +92,12 @@ class BinaryTree:
 
         return output
 
-    def in_order(self):
-        # left >> root >> right
+    def in_order(self) -> list:
+        """Traverse the list in pre-order manner: left >> root >> right
+
+        Returns:
+            list: List of values
+        """
         output = []
 
         def traverse(node):
@@ -95,7 +111,11 @@ class BinaryTree:
         return output
 
     def post_order(self):
-        # left >> right >> root
+        """Traverse the list in pre-order manner: left >> right >> root
+
+        Returns:
+            list: List of values
+        """
         output = []
 
         def traverse(node):
@@ -110,7 +130,15 @@ class BinaryTree:
 
 
 class BinarySearchTree(BinaryTree):
-    def add(self, val):
+    """Binary Search Tree class
+    """
+
+    def add(self, val: any) -> None:
+        """Add a value to the BST (values that are strictly less than the root - got to the left, the rest - to the right)
+
+        Args:
+            val (any): Value to be inserted
+        """
         new_node = Node(val)
 
         def traverse(node):
@@ -129,10 +157,3 @@ class BinarySearchTree(BinaryTree):
             traverse(self.root)
         else:
             self.root = new_node
-
-
-bt = BinaryTree()
-bt.add(1)
-bt.add(2)
-
-print(bt.pre_order())

@@ -52,9 +52,17 @@ class TestBinaryTree:
         assert tree.root.left.val == 2
         assert tree.root.right.val == 3
 
+    def test_pre_order_empty(self):
+        tree = bt()
+        assert tree.pre_order() == []
+
     def test_pre_order_happy_path(self, tree):
         expected = ['A', 'B', 'D', 'E', 'C', 'F', 'G']
         assert tree.pre_order() == expected
+
+    def test_in_order_empty(self):
+        tree = bt()
+        assert tree.in_order() == []
 
     def test_in_order_happy_path(self, tree):
         expected = ['D', 'B', 'E', 'A', 'F', 'C', 'G']
@@ -63,6 +71,10 @@ class TestBinaryTree:
     def test_post_order_happy_path(self, tree):
         expected = ['D', 'E', 'B', 'F', 'G', 'C', 'A']
         assert tree.post_order() == expected
+
+    def test_post_order_empty(self):
+        tree = bt()
+        assert tree.post_order() == []
 
     def test_contains_true(self, tree):
         assert tree.contains('A') == True
