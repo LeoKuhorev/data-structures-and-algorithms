@@ -128,6 +128,27 @@ class BinaryTree:
 
         return output
 
+    def max_val(self) -> int:
+        """Get the maximum value of the tree
+
+        Returns:
+            int: maximum value of the tree
+        """
+        if self.root:
+            _max = self.root.val
+
+            def traverse(node):
+                nonlocal _max
+                if node:
+                    if node.val > _max:
+                        _max = node.val
+                    traverse(node.left)
+                    traverse(node.right)
+                    return _max
+
+            traverse(self.root)
+            return _max
+
 
 class BinarySearchTree(BinaryTree):
     """Binary Search Tree class

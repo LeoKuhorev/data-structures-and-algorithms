@@ -36,7 +36,17 @@ class TestBinaryTree:
         tree.root.left.right = Node('E')
         tree.root.right.left = Node('F')
         tree.root.right.right = Node('G')
+        return tree
 
+    @pytest.fixture()
+    def tree_nums(self):
+        tree = bt(1)
+        tree.root.left = Node(2)
+        tree.root.right = Node(3)
+        tree.root.left.left = Node(4)
+        tree.root.left.right = Node(5)
+        tree.root.right.left = Node(6)
+        tree.root.right.right = Node(7)
         return tree
 
     def test_add_to_empty(self):
@@ -81,6 +91,13 @@ class TestBinaryTree:
 
     def test_contains_false(self, tree):
         assert tree.contains('U') == False
+
+    def test_max_val_empty(self):
+        tree = bt()
+        assert tree.max_val() == None
+
+    def test_max_val_non_empty(self, tree_nums):
+        assert tree_nums.max_val() == 7
 
 
 class TestBinarySearchTree:
