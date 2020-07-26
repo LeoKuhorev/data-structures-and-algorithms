@@ -128,6 +128,28 @@ class BinaryTree:
 
         return output
 
+    def breadth_first(self) -> list:
+        """Traverse the tree in breadth-first manner
+
+        Returns:
+            list: Values of the tree
+        """
+        output = []
+        if self.root:
+            q = Queue()
+            q.enqueue(self.root)
+
+            while not q.is_empty():
+                el = q.dequeue()
+                output.append(el.val)
+
+                if el.left:
+                    q.enqueue(el.left)
+                if el.right:
+                    q.enqueue(el.right)
+
+        return output
+
     def max_val(self) -> int:
         """Get the maximum value of the tree
 
