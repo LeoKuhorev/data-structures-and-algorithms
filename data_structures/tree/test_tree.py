@@ -99,6 +99,14 @@ class TestBinaryTree:
     def test_max_val_non_empty(self, tree_nums):
         assert tree_nums.max_val() == 7
 
+    def test_breadth_first_empty(self):
+        tree = bt()
+        assert tree.breadth_first() == []
+
+    def test_breadth_first_non_empty(self, tree):
+        expected = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+        assert tree.breadth_first() == expected
+
 
 class TestBinarySearchTree:
     def test_proof_of_life(self):

@@ -22,6 +22,7 @@
   - `.pre_order()` - O(n) time, O(n) space;
   - `.in_order()` - O(n) time, O(n) space;
   - `.post_order()` - O(n) time, O(n) space;
+  - `.breadth_first()` - O(n) time, O(n) space;
   - `.max_val()` - O(n) time, O(1) space;
 
 - class `BinareSearchTree`:
@@ -37,6 +38,7 @@
   - `.pre_order()` - Method takes no arguments and returns a list of values of the tree in root >> left >> right order;
   - `.in_order()` - Method takes no arguments and returns a list of values of the tree in left >> root >> right order;
   - `.post_order()` - Method takes no arguments and returns a list of values of the tree in left >> right >> root order;
+  - `.breadth_first()` - Method takes no arguments and returns a list of values of the tree in breadth-first manner;
   - `.max_val()` - Method takes no arguments and returns the maximum value of the tree;
 
 - class `BinareSearchTree` - which inherits after `BinaryTree` class
@@ -44,5 +46,6 @@
   - `.add()` - Method takes any value as an argument and adds it to the tree (values that are strictly less than the root - got to the left, the rest - to the right);
 
   ![Whiteboard](../../assets/find_max_val.png)
+  ![Whiteboard](../../assets/breadth_first.png)
 
 <a href="./tree.py">Link to code</a>
