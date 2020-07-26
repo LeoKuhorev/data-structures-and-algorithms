@@ -2,6 +2,9 @@ from data_structures.stacks_and_queues.stacks_and_queues import Queue
 
 
 class Node:
+    """Node class
+    """
+
     def __init__(self, val, left=None, right=None):
         self.val = val
         self.left = left
@@ -17,42 +20,61 @@ class Node:
 
 
 class BinaryTree:
+    """Binary Tree class
+    """
+
     def __init__(self, val=None):
         self.root = Node(val) if val else None
 
-    def add(self, val):
+    def add(self, val: any) -> None:
+        """Add a new node with Breadth first approach
+
+        Args:
+            val (any): Value to add
+        """
         new_node = Node(val)
-        if not self.root:
+        if self.root:
+            q = Queue()
+            q.enqueue(self.root)
+
+            def node_exists(node):
+                if node:
+                    q.enqueue(node)
+                    return True
+                return False
+
+            while not q.is_empty():
+                node = q.dequeue()
+
+                if node_exists(node.left):
+                    if not node_exists(node.right):
+                        node.right = new_node
+                else:
+                    node.left = new_node
+
+        else:
             self.root = new_node
-            return
 
-        q = Queue()
-        q.enqueue(self.root)
+    def contains(self, val):
+        def traverse(node):
+            if node:
+                if node.val == val:
+                    return True
+                traverse(node.left)
+                traverse(node.right)
+                return False
 
-        while not q.is_empty():
-            node = q.dequeue()
-            if node.left:
-                q.enqueue(node.left)
-            else:
-                node.left = new_node
-                return
-
-            if node.right:
-                q.enqueue(node.right)
-            else:
-                node.right = new_node
-                return
+        return traverse(self.root)
 
     def pre_order(self):
         # root >> left >> right
         output = []
 
         def traverse(node):
-            if not node:
-                return
-            output.append(node.val)
-            traverse(node.left)
-            traverse(node.right)
+            if node:
+                output.append(node.val)
+                traverse(node.left)
+                traverse(node.right)
 
         traverse(self.root)
 
@@ -63,12 +85,10 @@ class BinaryTree:
         output = []
 
         def traverse(node):
-            if not node:
-                return
-
-            traverse(node.left)
-            output.append(node.val)
-            traverse(node.right)
+            if node:
+                traverse(node.left)
+                output.append(node.val)
+                traverse(node.right)
 
         traverse(self.root)
 
@@ -79,12 +99,10 @@ class BinaryTree:
         output = []
 
         def traverse(node):
-            if not node:
-                return
-
-            traverse(node.left)
-            traverse(node.right)
-            output.append(node.val)
+            if node:
+                traverse(node.left)
+                traverse(node.right)
+                output.append(node.val)
 
         traverse(self.root)
 
@@ -92,7 +110,6 @@ class BinaryTree:
 
 
 class BinarySearchTree(BinaryTree):
-
     def add(self, val):
         new_node = Node(val)
 
@@ -112,3 +129,10 @@ class BinarySearchTree(BinaryTree):
             traverse(self.root)
         else:
             self.root = new_node
+
+
+bt = BinaryTree()
+bt.add(1)
+bt.add(2)
+
+print(bt.pre_order())

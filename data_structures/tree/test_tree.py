@@ -64,6 +64,12 @@ class TestBinaryTree:
         expected = ['D', 'E', 'B', 'F', 'G', 'C', 'A']
         assert tree.post_order() == expected
 
+    def test_contains_true(self, tree):
+        assert tree.contains('A') == True
+
+    def test_contains_false(self, tree):
+        assert tree.contains('U') == False
+
 
 class TestBinarySearchTree:
     def test_proof_of_life(self):
