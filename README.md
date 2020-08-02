@@ -11,7 +11,8 @@
 [Queue with Stacks](./challenges/queue_with_stacks)  
 [FIFO Animal Shelter](./challenges/fifo_animal_shelter)  
 [Multi Bracket Validation](./challenges/multi_bracket_validation)  
-[Eeney Meeney Miney Moe](./challenges/eeney_meeney_miney_moe)
+[Eeney Meeney Miney Moe](./challenges/eeney_meeney_miney_moe)  
+[Insertion Sort](./challenges/insertion_sort/)
 
 # Data Structures
 
