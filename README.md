@@ -12,6 +12,7 @@
 [FIFO Animal Shelter](./challenges/fifo_animal_shelter)  
 [Multi Bracket Validation](./challenges/multi_bracket_validation)  
 [Eeney Meeney Miney Moe](./challenges/eeney_meeney_miney_moe)  
+[Fizz Buzz Tree](./challenges/eeney_meeney_miney_moe)  
 [Insertion Sort](./challenges/insertion_sort/)
 
 # Data Structures
