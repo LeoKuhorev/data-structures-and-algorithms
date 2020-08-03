@@ -12,7 +12,7 @@
 
 ## Approach & Efficiency
 
-This methd can be described as O(n^2) time and O(1) space complexity
+This method can be described as O(n) time and O(n) space complexity
 
 ## Solution
 
