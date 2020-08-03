@@ -6,7 +6,7 @@ Implement insertion_sort algorithm
 
 ## Approach & Efficiency
 
-This methd can be described as O(n) time and O(1) space complexity
+This methd can be described as O(n^2) time and O(1) space complexity
 
 ## Solution
 
