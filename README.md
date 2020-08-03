@@ -1,8 +1,8 @@
 # data-structures-and-algorithms
 
-# Table of contents:
+## Table of contents:
 
-# Algorithms
+### Algorithms
 
 [Array Reverse](./challenges/array_reverse)  
 [Array Shift](./challenges/array_shift)  
@@ -15,7 +15,7 @@
 [Fizz Buzz Tree](./challenges/fizz_buzz_tree)  
 [Insertion Sort](./challenges/insertion_sort/)
 
-# Data Structures
+### Data Structures
 
 [Linked List](./data_structures/linked_list)  
 [Stack and Queue](./data_structures/stacks_and_queues)  
