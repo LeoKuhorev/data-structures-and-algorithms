@@ -1,4 +1,14 @@
 def merge(L: list, R: list, lst: list) -> list:
+    """Merge 2 lists sorting them in ascending orders
+
+    Args:
+        L (list): list one
+        R (list): list two
+        lst (list): resulting list
+
+    Returns:
+        list: merged list sorted asc
+    """
     i = j = k = 0
 
     while i < len(L) and j < len(R):
@@ -20,6 +30,14 @@ def merge(L: list, R: list, lst: list) -> list:
 
 
 def merge_sort(lst: list) -> list:
+    """Sort a list in ascending order (modification is done in-place)
+
+    Args:
+        lst (list): list to be sorted
+
+    Returns:
+        list: same list, but sorted
+    """
     _len = len(lst)
 
     if _len > 1:
@@ -29,12 +47,7 @@ def merge_sort(lst: list) -> list:
 
         merge_sort(L)
         merge_sort(R)
-        
+
         merge(L, R, lst)
 
     return lst
-
-
-lst = [2, 4, 6, 7, 8, 4, 2, 5, 7]
-
-print(merge_sort(lst))

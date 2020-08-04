@@ -13,7 +13,8 @@
 [Multi Bracket Validation](./challenges/multi_bracket_validation)  
 [Eeney Meeney Miney Moe](./challenges/eeney_meeney_miney_moe)  
 [Fizz Buzz Tree](./challenges/fizz_buzz_tree)  
-[Insertion Sort](./challenges/insertion_sort/)
+[Insertion Sort](./challenges/insertion_sort/)  
+[Merge Sort](./challenges/merge_sort/)
 
 # Data Structures
 
