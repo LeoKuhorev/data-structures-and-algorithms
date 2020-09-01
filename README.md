@@ -14,7 +14,8 @@
 [Eeney Meeney Miney Moe](./challenges/eeney_meeney_miney_moe)  
 [Fizz Buzz Tree](./challenges/fizz_buzz_tree)  
 [Insertion Sort](./challenges/insertion_sort/)  
-[Merge Sort](./challenges/merge_sort/)
+[Merge Sort](./challenges/merge_sort/)  
+[Quick Sort](./challenges/quick_sort/)
 
 # Data Structures
 
