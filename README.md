@@ -21,4 +21,5 @@
 
 [Linked List](./data_structures/linked_list)  
 [Stack and Queue](./data_structures/stacks_and_queues)  
-[Tree](./data_structures/tree)
+[Tree](./data_structures/tree)  
+[Hast Table](./data_structures/hashtable)
