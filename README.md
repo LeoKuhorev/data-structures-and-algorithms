@@ -16,7 +16,8 @@
 [Insertion Sort](./challenges/insertion_sort/)  
 [Merge Sort](./challenges/merge_sort/)  
 [Quick Sort](./challenges/quick_sort/)  
-[Repeated Word](./challenges/repeated_word/)
+[Repeated Word](./challenges/repeated_word/)  
+[Tree Intersection](./challenges/tree_intersection/)
 
 ### Data Structures
 
