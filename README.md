@@ -15,7 +15,7 @@
 [Fizz Buzz Tree](./challenges/fizz_buzz_tree)  
 [Insertion Sort](./challenges/insertion_sort/)  
 [Merge Sort](./challenges/merge_sort/)  
-[Quick Sort](./challenges/quick_sort/)
+[Quick Sort](./challenges/quick_sort/)  
 [Repeated Word](./challenges/repeated_word/)
 
 # Data Structures
