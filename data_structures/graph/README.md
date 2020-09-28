@@ -21,6 +21,10 @@
     - Include the weight of the connection in the returned collection
 - `Size()`:
     - Returns the total number of nodes in the graph
+- `Breadth_first()`:
+    - Traverses a graph in breadth-first manner and return a set of Vertices
+
+![Whiteboard picture](../../assets/graph_breadth_first.png)
 
 
 <a href="./graph.py">Link to code</a>
