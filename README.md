@@ -19,7 +19,7 @@
 [Repeated Word](./challenges/repeated_word/)  
 [Tree Intersection](./challenges/tree_intersection/)  
 [Hashmap Left Join](./challenges/left_join/)  
-[Hashmap Left Join](./challenges/get_edges/)
+[Get Edges](./challenges/get_edges/)
 
 # Data Structures
 
