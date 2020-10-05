@@ -22,9 +22,16 @@
 - `Size()`:
     - Returns the total number of nodes in the graph
 - `Breadth_first()`:
-    - Traverses a graph in breadth-first manner and return a set of Vertices
+    - Traverses a graph in breadth-first manner and returns a set of Vertices
+- `Pre_order()`:
+    - Traverses a graph in depth-first pre-order manner and returns a set of Vertices
 
 ![Whiteboard picture](../../assets/graph_breadth_first.png)
+![Whiteboard picture](../../assets/pre_order/1.jpg)
+![Whiteboard picture](../../assets/pre_order/2.jpg)
+![Whiteboard picture](../../assets/pre_order/3.jpg)
+![Whiteboard picture](../../assets/pre_order/4.jpg)
+![Whiteboard picture](../../assets/pre_order/5.jpg)
 
 
 <a href="./graph.py">Link to code</a>

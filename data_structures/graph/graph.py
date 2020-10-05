@@ -4,13 +4,21 @@ from data_structures.stacks_and_queues.stacks_and_queues import Queue
 class Vertex:
     """Vertex class
     """
+
     def __init__(self, val):
         self.val = val
+
+    def __str__(self):
+        return self.val
+
+    def __repr__(self):
+        return f'{self.__class__.__name__}({self.val})'
 
 
 class Edge:
     """Edge class
     """
+
     def __init__(self, vertex, weight):
         self.vertex = vertex
         self.weight = weight
@@ -19,6 +27,7 @@ class Edge:
 class Graph:
     """Graph class
     """
+
     def __init__(self):
         self.adjacency_list = {}
 
@@ -35,7 +44,7 @@ class Graph:
         self.adjacency_list[vertex] = []
         return vertex
 
-    def add_edge(self, start: Vertex, end: Vertex, weight: int=1) -> None:
+    def add_edge(self, start: Vertex, end: Vertex, weight: int = 1) -> None:
         """Add a new edge between 2 vertices
 
         Args:
@@ -98,20 +107,34 @@ class Graph:
         """
         q = Queue()
         output = set()
-        
+
         if not start in self.adjacency_list:
             raise KeyError('Given Vertex is not part of the Graph')
-        
+
         q.enqueue(start)
-        
+
         while not q.is_empty():
             vertex = q.dequeue()
             output.add(vertex)
-            
+
             for neighbor in self.get_neighbors(vertex):
                 if neighbor['vertex'] not in output:
                     q.enqueue(neighbor['vertex'])
-        
+
+        return output
+
+    def pre_order(self, start: Vertex, output: set = None) -> set:
+        if output is None:
+            output = set()
+
+        if start in self.adjacency_list:
+            output.add(start)
+        else:
+            raise KeyError('Given Vertex is not part of the Graph')
+
+        for edge in self.adjacency_list[start]:
+            output = self.pre_order(edge.vertex, output)
+
         return output
 
     def size(self) -> int:
