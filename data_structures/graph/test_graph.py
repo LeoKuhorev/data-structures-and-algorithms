@@ -97,14 +97,50 @@ class TestGraph:
 
         """
         (1) --- (2)
-               /   \
-            (3) --- (4)
-            /  \     /
+               /    \
+             (3) --- (4)
+            /   \   /
            (6)---(5)
         """
 
         expected = set([vertex_1, vertex_2, vertex_3,
                         vertex_4, vertex_6, vertex_5])
         actual = graph.breadth_first(vertex_1)
+
+        assert actual == expected
+
+    def test_preorder(self, graph):
+        vertex_1 = graph.add_vertex('A')
+        vertex_2 = graph.add_vertex('B')
+        vertex_3 = graph.add_vertex('C')
+        vertex_4 = graph.add_vertex('D')
+        vertex_5 = graph.add_vertex('E')
+        vertex_6 = graph.add_vertex('F')
+        vertex_7 = graph.add_vertex('G')
+        vertex_8 = graph.add_vertex('H')
+
+        graph.add_edge(vertex_1, vertex_2)
+        graph.add_edge(vertex_1, vertex_4)
+        graph.add_edge(vertex_2, vertex_4)
+        graph.add_edge(vertex_2, vertex_3)
+        graph.add_edge(vertex_3, vertex_7)
+        graph.add_edge(vertex_4, vertex_5)
+        graph.add_edge(vertex_4, vertex_8)
+        graph.add_edge(vertex_4, vertex_6)
+        graph.add_edge(vertex_6, vertex_8)
+
+        """
+        (A) --- (D) --- (F)
+           \  /  |  \  /
+            (B) (E)  (H)
+             |
+            (C)
+             |
+            (G)
+        """
+        # Expected output: A, B, C, G, D, E, H, F
+        expected = set([vertex_1, vertex_2, vertex_3,
+                        vertex_6, vertex_4, vertex_5, vertex_8, vertex_7])
+        actual = graph.pre_order(vertex_1)
 
         assert actual == expected
