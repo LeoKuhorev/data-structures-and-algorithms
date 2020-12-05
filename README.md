@@ -11,7 +11,6 @@
 [Queue with Stacks](./challenges/queue_with_stacks)  
 [FIFO Animal Shelter](./challenges/fifo_animal_shelter)  
 [Multi Bracket Validation](./challenges/multi_bracket_validation)  
-[Eeney Meeney Miney Moe](./challenges/eeney_meeney_miney_moe)  
 [Fizz Buzz Tree](./challenges/fizz_buzz_tree)  
 [Insertion Sort](./challenges/insertion_sort/)  
 [Merge Sort](./challenges/merge_sort/)  
@@ -28,3 +27,9 @@
 [Tree](./data_structures/tree)  
 [Hast Table](./data_structures/hashtable)  
 [Graphs](./data_structures/graph)
+
+
+# Code Challenges
+
+[Eeney Meeney Miney Moe](./challenges/eeney_meeney_miney_moe)  
+[Can Place Flowers](./challenges/can_place_flowers)

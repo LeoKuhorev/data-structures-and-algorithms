@@ -5,7 +5,7 @@ class Vertex:
     """Vertex class
     """
 
-    def __init__(self, val):
+    def __init__(self, val: any) -> None:
         self.val = val
 
     def __str__(self):
@@ -19,7 +19,7 @@ class Edge:
     """Edge class
     """
 
-    def __init__(self, vertex, weight):
+    def __init__(self, vertex: Vertex, weight: int) -> None:
         self.vertex = vertex
         self.weight = weight
 

@@ -20,7 +20,7 @@ class Node:
 class LinkedList:
     """Class Singly Linked List"""
 
-    def __init__(self, val=None) -> None:
+    def __init__(self, val: Node=None) -> None:
         """class Constructor
 
         Args:
@@ -73,7 +73,7 @@ class LinkedList:
             self.head = new_node
 
     def insert_before(self, val: any, new_val: any) -> bool:
-        """Inserts a node with the given new value before the first occurence of the given target value. Returns False otherwise
+        """Inserts a node with the given new value before the first occurrence of the given target value. Returns False otherwise
 
         Args:
             val (any): Target value to look for
@@ -99,7 +99,7 @@ class LinkedList:
             return False
 
     def insert_after(self, val: any, new_val: any) -> bool:
-        """Inserts a node with the given new value after the first occurence of the given target value. Returns False otherwise
+        """Inserts a node with the given new value after the first occurrence of the given target value. Returns False otherwise
 
         Args:
             val (any): Target value to look for
