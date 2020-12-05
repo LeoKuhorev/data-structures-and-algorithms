@@ -3,7 +3,7 @@ class Node:
     """
 
     def __init__(self, val: any, _next=None) -> None:
-        """Class initializator
+        """Class initializer
 
         Args:
             val (any): value to be stored in the node
@@ -16,7 +16,7 @@ class Node:
         """Formal string representation
 
         Returns:
-            str: How to recreate an inctance of the class
+            str: How to recreate an instance of the class
         """
         return f'{self.__class__.__name__}({self.val}, {self.next})'
 
@@ -34,7 +34,7 @@ class Stack:
     """
 
     def __init__(self, val=None) -> None:
-        """Class initializator
+        """Class initializer
 
         Args:
             val (any, optional): Value to be passed in to the Stack upon instantiation. Defaults to None.
@@ -45,7 +45,7 @@ class Stack:
         """Formal string representation
 
         Returns:
-            str: How to recreate an inctance of the class
+            str: How to recreate an instance of the class
         """
         return f'{self.__class__.__name__}()'
 
@@ -123,7 +123,7 @@ class Queue:
     """
 
     def __init__(self, val=None):
-        """Class initializator
+        """Class initializer
 
         Args:
             val (any, optional): Value to be passed in to the Queue upon instantiation. Defaults to None.
@@ -134,7 +134,7 @@ class Queue:
         """Formal string representation
 
         Returns:
-            str: How to recreate an inctance of the class
+            str: How to recreate an instance of the class
         """
         return f'{self.__class__.__name__}()'
 
