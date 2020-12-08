@@ -33,4 +33,5 @@
 
 [Eeney Meeney Miney Moe](./challenges/eeney_meeney_miney_moe)  
 [Can Place Flowers](./challenges/can_place_flowers)  
-[Spiral Matrix](./challenges/spiral_matrix)
+[Spiral Matrix](./challenges/spiral_matrix)  
+[Pairs of Songs With Total Durations Divisible by 60](./challenges/pairs_of_songs)
