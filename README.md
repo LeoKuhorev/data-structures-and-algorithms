@@ -32,4 +32,5 @@
 # Code Challenges
 
 [Eeney Meeney Miney Moe](./challenges/eeney_meeney_miney_moe)  
-[Can Place Flowers](./challenges/can_place_flowers)
+[Can Place Flowers](./challenges/can_place_flowers)  
+[Spiral Matrix](./challenges/spiral_matrix)
