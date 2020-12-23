@@ -37,3 +37,4 @@
 [Pairs of Songs With Total Durations Divisible by 60](./challenges/pairs_of_songs)  
 [Remove Nth Node From End of List](./challenges/remove_nth_from_end)  
 [Valid Mountain Array](./challenges/valid_mountain_array)  
+[Balanced Binary Tree](./challenges/balanced_binary_tree)  
