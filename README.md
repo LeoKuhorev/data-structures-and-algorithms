@@ -33,6 +33,7 @@
 - [Eeney Meeney Miney Moe](./challenges/eeney_meeney_miney_moe)
 - [Can Place Flowers](./challenges/can_place_flowers)
 - [Spiral Matrix](./challenges/spiral_matrix)
+- [Spiral Matrix I](./challenges/spiral_matrix_i)
 - [Pairs of Songs With Total Durations Divisible by 60](./challenges/pairs_of_songs)
 - [Remove Nth Node From End of List](./challenges/remove_nth_from_end)
 - [Valid Mountain Array](./challenges/valid_mountain_array)
