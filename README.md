@@ -39,3 +39,4 @@
 - [Valid Mountain Array](./challenges/valid_mountain_array)
 - [Balanced Binary Tree](./challenges/balanced_binary_tree)
 - [Largest Rectangle in Histogram](./challenges/largest_rectangle_in_histogram)
+- [Maximum Subarray](./challenges/max_subarray)
