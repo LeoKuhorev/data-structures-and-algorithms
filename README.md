@@ -40,3 +40,4 @@
 - [Balanced Binary Tree](./challenges/balanced_binary_tree)
 - [Largest Rectangle in Histogram](./challenges/largest_rectangle_in_histogram)
 - [Maximum Subarray](./challenges/max_subarray)
+- [Merge k Sorted Lists](./challenges/merge_k_sorted_lists)
