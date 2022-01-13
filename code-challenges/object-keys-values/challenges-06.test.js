@@ -188,32 +188,10 @@ For example: [ { house: 'Stark', members: 6 }, { house: 'Arryn', members: 2 }, .
 
 const deceasedSpouses = ["Catelyn", "Lysa", "Robert", "Khal Drogo", "Alerie"];
 
-const houseSurvivors = (arr) => {
-  const survivors = [];
-
-  arr.forEach((element) => {
-    let members = [];
-    Object.keys(element).forEach((property) => {
-      if (property !== "house" && element[property]) {
-        Array.isArray(element[property])
-          ? members.push(...element[property])
-          : members.push(element[property]);
-      }
-    });
-
-    for (let i in members) {
-      for (let k in deceasedSpouses) {
-        if (members[i] === deceasedSpouses[k]) {
-          members.splice(i, 1);
-        }
-      }
-    }
-
-    survivors.push({ house: element.house, members: members.length });
-  });
-
-  return survivors;
-};
+const houseSurvivors = arr => arr.map(({ children, house, spouse }) => ({ 
+  house: house, 
+  members: (spouse && !deceasedSpouses.includes(spouse)) ? 2 : 1 + (children?.length ?? 0) 
+}))
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
